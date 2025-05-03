@@ -21,3 +21,11 @@ build-backend = "setuptools.build_meta"
 
 [project.urls]
 Homepage = "https://github.com/JetpackYoshi/meowmeow"
+
+[tool.pytest.ini_options]
+markers = [
+    "files: marks tests as file operation",
+]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
