@@ -1,9 +1,23 @@
 import os
 
-def dir_to_file_list(dir_path):
-    """Get the list of full paths of all files in a folder"""
+def dir_to_file_list(dir_path, file_type=None):
+    """
+    Generate a list of full file paths for all files in the specified directory,
+    optionally filtering by file type.
+
+    Args:
+        dir_path (str): The path to the directory to scan for files.
+        file_type (str, optional): The file extension to filter by (e.g., '.txt'). Defaults to None.
+
+    Returns:
+        list: A list of strings, where each string is the full path to a file in the directory.
+    """
     folder_path = dir_path  # Use the existing variable 'directory_path'
-    file_paths = [os.path.join(folder_path, file) for file in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, file))]
+    file_paths = [
+        os.path.join(folder_path, file)
+        for file in os.listdir(folder_path)
+        if os.path.isfile(os.path.join(folder_path, file)) and (file_type is None or file.endswith(file_type))
+    ]
 
     return file_paths
 

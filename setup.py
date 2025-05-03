@@ -6,7 +6,7 @@ setup(
     description="",
     author="Yoshika Govender",
     author_email="yoshi.govender@gmail.com",
-    url="https://github.com/JetpackYoshi/meowmeow",
+    url="https://github.com/JetpackYoshi/meowmeowutils",
     packages=find_packages(),
     python_requires=">=3.10",
     install_requires=[],
