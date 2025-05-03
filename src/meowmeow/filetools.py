@@ -5,14 +5,19 @@ def dir_to_file_list(dir_path, file_type=None):
     Generate a list of full file paths for all files in the specified directory,
     optionally filtering by file type.
 
-    Args:
-        dir_path (str): The path to the directory to scan for files.
-        file_type (str, optional): The file extension to filter by (e.g., '.txt'). Defaults to None.
+    Parameters
+    ----------
+    dir_path : str
+        The path to the directory to scan for files.
+    file_type : str, optional
+        The file extension to filter by (e.g., '.txt'). Defaults to None.
 
-    Returns:
-        list: A list of strings, where each string is the full path to a file in the directory.
+    Returns
+    -------
+    list of str
+        A list of strings, where each string is the full path to a file in the directory.
     """
-    folder_path = dir_path  # Use the existing variable 'directory_path'
+    folder_path = dir_path
     file_paths = [
         os.path.join(folder_path, file)
         for file in os.listdir(folder_path)
@@ -25,32 +30,41 @@ def create_directory_tree(root_dir, directory_structure, create_files=True, __co
     """
     Create a directory tree based on a given structure and return a dictionary of all folders and their unique paths.
 
-    Args:
-        root_dir (str): The root directory where the tree will be created.
-        directory_structure (dict): A dictionary defining the directory tree structure. 
-                                     Keys can be folder names, file names (with extensions), or tuples.
-                                     If a key is a tuple, the first element is the name, and the second is the unique reference name.
-                                     If a key is a folder, its value should be a dictionary defining its contents.
-                                     If a key is a file, its value should be None.
-        create_files (bool): Whether to create empty files for file entries.
-        __counter (dict): A dictionary to keep track of duplicate names.
-        __path_tracker (dict): A dictionary to track unique references for paths.
+    Parameters
+    ----------
+    root_dir : str
+        The root directory where the tree will be created.
+    directory_structure : dict
+        A dictionary defining the directory tree structure. Keys can be folder names, file names (with extensions), 
+        or tuples. If a key is a tuple, the first element is the name, and the second is the unique reference name. 
+        If a key is a folder, its value should be a dictionary defining its contents. If a key is a file, its value 
+        should be None.
+    create_files : bool, optional
+        Whether to create empty files for file entries. Defaults to True.
+    __counter : dict, optional
+        A dictionary to keep track of duplicate names. Used internally.
+    __path_tracker : dict, optional
+        A dictionary to track unique references for paths. Used internally.
 
-    Returns:
-        dict: A dictionary where keys are folder/file names and values are their unique full paths.
+    Returns
+    -------
+    dict
+        A dictionary where keys are folder/file names and values are their unique full paths.
 
-    Example:
-        directory_structure = {
-            ("folder1", "unique_folder1"): {
-                ("subfolder1", "unique_subfolder1"): {
-                    ("file1.txt", "unique_file1.txt"): None
-                },
-                "subfolder2": {}
-            },
-            "folder2": {
-                "file2.txt": None
-            }
-        }
+    Examples
+    --------
+    >>> directory_structure = {
+    ...     ("folder1", "unique_folder1"): {
+    ...         ("subfolder1", "unique_subfolder1"): {
+    ...             ("file1.txt", "unique_file1.txt"): None
+    ...         },
+    ...         "subfolder2": {}
+    ...     },
+    ...     "folder2": {
+    ...         "file2.txt": None
+    ...     }
+    ... }
+    >>> create_directory_tree("/tmp", directory_structure)
     """
     if __counter is None:
         __counter = {}
