@@ -1,6 +1,6 @@
 import os
 import pytest
-from meowmeow.filetools import dir_to_file_list, create_directory_tree
+from nyanpy.filetools import dir_to_file_list, create_directory_tree
 
 @pytest.fixture
 def temp_dir(tmp_path):

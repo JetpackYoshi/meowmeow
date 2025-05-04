@@ -10,7 +10,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path('..', 'src').resolve()))
 
-project = 'MeowMeow Utils'
+project = 'NyanPy Utils'
 copyright = '2025, Yoshika Govender'
 author = 'Yoshika Govender'
 

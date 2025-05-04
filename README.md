@@ -1,4 +1,4 @@
-# MeowMeow
+# NyanPy
 The cutest little assortment of nifty Python tools.
 
 ## Overview
@@ -8,14 +8,14 @@ MeowMeow is a collection of nifty Python tools designed to simplify file and dir
 You can install the project using pip. Simply run:
 
 ```bash
-pip install meowmeowutils
+pip install nyanpy
 ```
 
 ## Usage
 To use the tools provided in this package, you can import them in your Python scripts:
 
 ```python
-from meowmeow.filetools import dir_to_file_list, create_directory_tree
+from nyanpy.filetools import dir_to_file_list, create_directory_tree
 ```
 
 ## Contributing

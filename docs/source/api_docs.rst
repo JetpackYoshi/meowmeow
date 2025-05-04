@@ -4,7 +4,7 @@ API Docs
 
 filetools
 ---------
-.. automodule:: meowmeow.filetools
+.. automodule:: nyanpy.filetools
    :members:
    :undoc-members:
    :show-inheritance:
