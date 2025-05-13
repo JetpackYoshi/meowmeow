@@ -7,8 +7,10 @@ setup(
     author="Yoshika Govender",
     author_email="yoshi.govender@gmail.com",
     url="https://github.com/JetpackYoshi/meowmeowutils",
-    packages=find_packages(),
-    python_requires=">=3.10",
+    packages=find_packages(where="src"),  # Find all packages under the src directory
+    package_dir={"": "src"},  # Tell setuptools that your packages are under `src/`
+    include_package_data=True,
+    python_requires=">=3.9",
     install_requires=[],
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",

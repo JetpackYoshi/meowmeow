@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 def dir_to_file_list(dir_path, file_type=None):
     """
